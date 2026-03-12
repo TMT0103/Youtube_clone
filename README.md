@@ -1,70 +1,107 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# 📺 YouTube Clone
 
-## Available Scripts
+Một ứng dụng **YouTube Clone** được xây dựng bằng **React**, **Material UI** và **YouTube Data API v3**.
 
-In the project directory, you can run:
+## ✨ Tính năng
 
-### `npm start`
+* 🏠 Trang chủ hiển thị video theo danh mục (trending videos)
+* 🔍 Tìm kiếm video
+* 📹 Phát video bằng iframe embed
+* 💬 Hiển thị bình luận
+* 📊 Hiển thị lượt xem và lượt thích
+* 📡 Video liên quan từ cùng kênh
+* 📱 Giao diện responsive (mobile & desktop)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+# 🛠️ Công nghệ sử dụng
 
-### `npm test`
+* **React** — Framework xây dựng giao diện
+* **React Router DOM** — Điều hướng trang (routing)
+* **Material UI (MUI)** — Thư viện UI component
+* **Axios** — Gửi HTTP request
+* **YouTube Data API v3** — Lấy dữ liệu video từ YouTube
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+# 🚀 Hướng dẫn cài đặt
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 1. Clone project
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```bash
+git clone https://github.com/your-username/youtube-clone.git
+cd youtube-clone
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 2. Cài đặt thư viện
 
-### `npm run eject`
+```bash
+npm install
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## 3. Tạo API Key cho YouTube Data API v3
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. Truy cập **Google Cloud Console**
+   [https://console.cloud.google.com](https://console.cloud.google.com)
+2. Tạo **Project mới**
+3. Vào **APIs & Services → Library**
+4. Tìm **YouTube Data API v3** → Enable
+5. Vào **APIs & Services → Credentials**
+6. Chọn **+ Create Credentials → API Key**
+7. Sao chép API Key
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+---
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## 4. Cấu hình biến môi trường
 
-## Learn More
+Tạo file `.env` trong thư mục gốc của project:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```env
+REACT_APP_YOUTUBE_API_KEY=your_api_key_here
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+⚠️ **Không commit file `.env` lên GitHub**
+Hãy đảm bảo file này đã nằm trong `.gitignore`.
 
-### Code Splitting
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## 5. Chạy ứng dụng
 
-### Analyzing the Bundle Size
+```bash
+npm start
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Ứng dụng sẽ chạy tại:
 
-### Making a Progressive Web App
+```
+http://localhost:3000
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+# 🔑 Sử dụng API
 
-### Advanced Configuration
+Project sử dụng **YouTube Data API v3**.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Free tier cho phép **10,000 units/ngày**.
 
-### Deployment
+| Endpoint         | Mục đích                        |
+| ---------------- | ------------------------------- |
+| `videos`         | Lấy thông tin video và thống kê |
+| `search`         | Tìm kiếm video                  |
+| `channels`       | Lấy thông tin kênh              |
+| `commentThreads` | Lấy danh sách bình luận         |
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-### `npm run build` fails to minify
+# 📝 Lưu ý
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+* Một số kênh YouTube có thể **ẩn lượt thích (`likeCount`)**, khi đó giá trị sẽ hiển thị là `0`
+* Một số video **không cho phép embed**, nên sẽ không phát được trong iframe
+* **API quota được reset mỗi ngày lúc 00:00 theo giờ Pacific**
+
+
+# 📄 License
+
+MIT License
+
+
+

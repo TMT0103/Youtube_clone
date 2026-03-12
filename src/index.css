@@ -1,13 +1,118 @@
+html,
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
+  background: #0f172a; /* nền xanh đậm */
+  color: #e2e8f0;
+  font-family: "Segoe UI", sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+a {
+  text-decoration: none;
+  color: #38bdf8; /* xanh cyan */
+}
+
+/* scrollbar */
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #38bdf8, #f472b6);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* CATEGORY BUTTON */
+
+.category-btn {
+  font-weight: bold !important;
+  text-transform: capitalize;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  cursor: pointer;
+  background: #1e293b;
+  outline: none;
+  border: none;
+
+  padding: 8px 18px;
+  margin: 10px 0px;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+  color: #cbd5f5;
+}
+
+/* hover effect */
+
+.category-btn:hover {
+  background: linear-gradient(90deg, #38bdf8, #f472b6);
+  color: white !important;
+  transform: scale(1.05);
+}
+
+.category-btn:hover span {
+  color: white !important;
+}
+
+/* VIDEO PLAYER */
+
+.react-player {
+  height: 77vh !important;
+  width: 100% !important;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* SEARCH BAR */
+
+.search-bar {
+  border: none;
+  outline: none;
+  width: 350px;
+  padding: 8px 15px;
+  border-radius: 20px;
+  background: #1e293b;
+  color: white;
+}
+
+/* focus search */
+
+.search-bar:focus {
+  box-shadow: 0 0 0 2px #38bdf8;
+}
+
+/* RESPONSIVE */
+
+@media screen and (max-width: 900px) {
+  .category-btn {
+    margin: 10px;
+  }
+}
+
+@media screen and (max-width:800px){
+  .copyright{
+    display:none !important;
+  }
+}
+
+@media screen and (max-width: 600px) {
+
+  .scroll-horizontal {
+    overflow: auto !important;
+  }
+
+  .react-player {
+    height: 45vh !important;
+  }
+
+  .search-bar{
+    width:200px;
+  }
 }
